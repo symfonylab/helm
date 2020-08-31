@@ -3,11 +3,11 @@ entries:
   app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-09-01T00:07:43.506686+03:00"
+    created: "2020-09-01T00:27:52.793513+03:00"
     description: A Helm chart for Kubernetes
-    digest: 6cb816d53a4ba19cc4b538714089b0dab94e9c6e597856c1d97a8a0e0aa2ab40
+    digest: 11a1d84395d0e9193b9e2a62dcbd6a9e9355da747d8255d38d3af42e555cbfc5
     name: app
     urls:
-    - https://symfonylab.github.io/helm/app-0.1.0.tgz
-    version: 0.1.0
-generated: "2020-09-01T00:07:43.5062+03:00"
+    - https://symfonylab.github.io/helm/app-1.0.0.tgz
+    version: 1.0.0
+generated: "2020-09-01T00:27:52.792911+03:00"
