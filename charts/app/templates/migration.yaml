@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ .Release.Name }}-migration-{{ randAlphaNum 5 | lower }}
+spec:
+  template:
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      containers:
+        - name: {{ .Release.Name }}-migration
+          image: "{{ .Values.image.repository }}:{{ .Values.migration.image.tag }}"
+          command: ["bin/console", "d:m:m", "--no-interaction"]
+          envFrom:
+          {{- range $configRef := .Values.configMapRef }}
+          - configMapRef:
+              name: "{{ $configRef }}"
+          {{- end }}
+          {{- range $secretRef := .Values.secretRef }}
+          - secretRef:
+              name: "{{ $secretRef }}"
+          {{- end }}
+      restartPolicy: Never
+      ttlSecondsAfterFinished: 3600
+  backoffLimit: 5

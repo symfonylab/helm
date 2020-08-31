@@ -1,0 +1,39 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  tag: stable
+  pullPolicy: Always
+imagePullSecrets:
+  - name: gitlab-docker-secret
+service:
+  type: ClusterIP
+  port: 8000
+configMapRef: []
+secretRef:
+  - "dating2020-site-db-secret"
+
+migration:
+  image:
+    tag: stable
+
+workers:
+  enabled: false
+  image:
+    tag: stable
+    pullPolicy: Always
+
+nameOverride: ""
+fullnameOverride: ""
+
+podSecurityContext: {}
+
+securityContext: {}
+
+resources: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
