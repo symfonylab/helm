@@ -22,7 +22,7 @@ spec:
       {{- end }}
       containers:
         - name: {{ .Release.Name }}
-          image: "{{ .Values.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
           {{- range $configRef := .Values.configMapRef }}
