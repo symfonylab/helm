@@ -1,26 +1,14 @@
-replicaCount: 1
-
 image:
   repository: nginx
   tag: stable
-  pullPolicy: Always
+  pullPolicy: OnFailure
 imagePullSecrets:
   - name: gitlab-docker-secret
-service:
-  type: ClusterIP
-  port: 8000
 configMapRef: []
 secretRef: []
 
-migration:
-  image:
-    tag: stable
-
-workers:
-  enabled: false
-  image:
-    tag: stable
-    pullPolicy: Always
+schedule: "*/1 * * * *"
+args: []
 
 nameOverride: ""
 fullnameOverride: ""

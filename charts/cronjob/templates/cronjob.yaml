@@ -1,0 +1,20 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-{{ randAlphaNum 5 | lower }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  schedule: "{{ .Values.schedule }}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: {{ .Release.Name }}
+              image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+              args:
+              {{- range $arg := .Values.args }}
+                - {{ $arg }}
+              {{- end }}
+          restartPolicy: {{ .Values.image.pullPolicy }}
