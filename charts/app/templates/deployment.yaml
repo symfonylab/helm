@@ -20,6 +20,12 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+        {{- range $secretVolume := .Values.secretVolume }}
+        - name: {{ $secretVolume }}
+          secret:
+            secretName: {{ $secretVolume }}
+        {{- end }}
       containers:
         - name: {{ .Release.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -35,3 +41,10 @@ spec:
           {{- end }}
           ports:
               - containerPort: {{ .Values.service.port }}
+          volumeMounts:
+            {{- range $secretVolume := .Values.secretVolume }}
+            - name: {{ $secretVolume }}
+              mountPath: "/var/www/html/secrets/"
+              readOnly: true
+            {{- end }}
+

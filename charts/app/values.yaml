@@ -11,6 +11,7 @@ service:
   port: 8000
 configMapRef: []
 secretRef: []
+secretVolume: []
 
 migration:
   image:
