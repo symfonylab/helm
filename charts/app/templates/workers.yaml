@@ -6,7 +6,7 @@ metadata:
   labels:
     app: {{ .Release.Name }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.workers.replicaCount }}
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ .Release.Name }}-workers

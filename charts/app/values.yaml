@@ -14,11 +14,13 @@ secretRef: []
 secretVolume: []
 
 migration:
+  enabled: true
   image:
     tag: stable
 
 workers:
   enabled: false
+  replicaCount: 1
   image:
     tag: stable
     pullPolicy: Always

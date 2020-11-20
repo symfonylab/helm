@@ -3,7 +3,16 @@ entries:
   app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-18T23:29:56.975781+03:00"
+    created: "2020-11-20T12:28:03.007249+02:00"
+    description: A Helm chart for Kubernetes
+    digest: e83fd94d27fbd07cc562996985d758f5035e593ab497af0acd2b000565e5fbce
+    name: app
+    urls:
+    - https://symfonylab.github.io/helm/app-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2020-11-20T12:28:03.007006+02:00"
     description: A Helm chart for Kubernetes
     digest: b6a921199c172c807fa9603f98bf3cbc871dac6cee92562eb14411b2f117f03b
     name: app
@@ -12,7 +21,7 @@ entries:
     version: 1.0.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-18T23:29:56.975488+03:00"
+    created: "2020-11-20T12:28:03.006682+02:00"
     description: A Helm chart for Kubernetes
     digest: 8c85e4dc7e4a00361282d1a1715460766c84598df13c0aa46cf048cd68a86eb7
     name: app
@@ -21,7 +30,7 @@ entries:
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-18T23:29:56.97481+03:00"
+    created: "2020-11-20T12:28:03.005879+02:00"
     description: A Helm chart for Kubernetes
     digest: bcee0ee86c4207d23dd41baa9606b53fc760bd9f1c25a1d0275766698aa8a5ca
     name: app
@@ -31,20 +40,20 @@ entries:
   cronjob:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-18T23:29:56.976507+03:00"
+    created: "2020-11-20T12:28:03.007918+02:00"
     description: A Helm chart for Kubernetes
-    digest: 3a93d38bdffcb0eb49e5cb32a60313c17541d777d6e770b94f45522c50716e15
+    digest: ea2ef7f3dba56f450ac16e355cc45d2dc775588881990b406ea5eefe36b8dc4c
     name: cronjob
     urls:
     - https://symfonylab.github.io/helm/cronjob-1.0.1.tgz
     version: 1.0.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-10-18T23:29:56.976293+03:00"
+    created: "2020-11-20T12:28:03.007742+02:00"
     description: A Helm chart for Kubernetes
     digest: c3d311c71bb353044661128fc7d491733013a2b85d94643baaff7b82dd974644
     name: cronjob
     urls:
     - https://symfonylab.github.io/helm/cronjob-1.0.0.tgz
     version: 1.0.0
-generated: "2020-10-18T23:29:56.968379+03:00"
+generated: "2020-11-20T12:28:02.99968+02:00"
