@@ -12,11 +12,25 @@ service:
 configMapRef: []
 secretRef: []
 secretVolume: []
+resources:
+  limits:
+    cpu: 150m
+    memory: 64Mi
+  requests:
+    cpu: 150m
+    memory: 64Mi
 
 migration:
   enabled: true
   image:
     tag: stable
+  resources:
+    limits:
+      cpu: 500m
+      memory: 256Mi
+    requests:
+      cpu: 500m
+      memory: 256Mi
 
 workers:
   enabled: false
@@ -24,6 +38,13 @@ workers:
   image:
     tag: stable
     pullPolicy: Always
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 500m
+      memory: 512Mi
 
 nameOverride: ""
 fullnameOverride: ""
@@ -31,8 +52,6 @@ fullnameOverride: ""
 podSecurityContext: {}
 
 securityContext: {}
-
-resources: {}
 
 nodeSelector: {}
 

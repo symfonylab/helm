@@ -14,6 +14,13 @@ spec:
         - name: {{ .Release.Name }}-migration
           image: "{{ .Values.image.repository }}:{{ .Values.migration.image.tag }}"
           command: ["bin/console", "d:m:m", "--no-interaction"]
+          resources:
+            limits:
+              cpu: {{ .Values.migration.resources.limits.cpu }}
+              memory: {{ .Values.migration.resources.limits.memory }}
+            requests:
+              cpu: {{ .Values.migration.resources.requests.cpu }}
+              memory: {{ .Values.migration.resources.requests.memory }}
           envFrom:
           {{- range $configRef := .Values.configMapRef }}
           - configMapRef:
